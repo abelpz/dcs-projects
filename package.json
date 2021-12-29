@@ -5,7 +5,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "parseComponents": "i18next 'src/components/*.js' 'src/components/**/*.js' [-oc]",
+    "utils": "node src/utils/scripts.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",

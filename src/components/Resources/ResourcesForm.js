@@ -14,6 +14,7 @@ import Stack from '@mui/material/Stack';
 import SelectListItem from '@components/FormFields/SelectListItem'
 import ClearIcon from '@mui/icons-material/Clear';
 import theme from '@styles/theme'
+import { t } from 'i18next'
 
 function ResourcesForm() {
   const dispatch = useDispatch()
@@ -38,8 +39,8 @@ function ResourcesForm() {
     <SettingsForm
       isLoading={isLoading}
       error={error}
-      label="Select resources you will be working on"
-      errorMessage="Could not find resources in the selected organization. Contact your organization admin."
+      label={t("Select resources you will be working on")}
+      errorMessage={t("Could not find resources in the selected organization. Contact your organization admin.")}
     >
       <FormControl fullWidth>
         <Stack spacing={3}>
@@ -74,8 +75,8 @@ function ResourcesForm() {
               return (
                 <TextField
                   {...params}
-                  label="Resources"
-                  placeholder="Type your desired resource name here..."
+                  label={t("Resources")}
+                  placeholder={t("Type your desired resource name here...")}
                 />
             )}}
           />
@@ -84,7 +85,7 @@ function ResourcesForm() {
       <Paper elevation={6} sx={{mt: '1rem'}}>
         <List>
           <ListSubheader sx={{backgroundColor:'inherit'}}>
-            Selected resources
+            {t("Selected resources")}
           </ListSubheader>
           <Divider></Divider>
           {selectedResources.map((resource) => (

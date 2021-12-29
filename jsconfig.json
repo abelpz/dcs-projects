@@ -9,7 +9,7 @@
       "@common/*": ["src/common/*"],
       "@utils/*": ["src/utils/*"],
       "@store/*": ["src/store/*"],
-      "@locale/*": ["src/locale/*"]
+      "@locales/*": ["src/locales/*"]
     }
   }
 }

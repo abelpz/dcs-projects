@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
+import { useTranslation } from 'react-i18next'
 
 //mui
 import { useSelector } from 'react-redux'
@@ -9,7 +10,8 @@ import { InputLabel, MenuItem, Select, FormControl, Avatar, ListItem, ListItemAv
 import SelectListItem from '@components/FormFields/SelectListItem'
 
 
-function OrgForm({handleOnChange}) {
+function OrgForm({ handleOnChange }) {
+  const { t, i18n } = useTranslation()
   const [token, savedOrg] = useSelector(state => [state?.auth?.token?.sha1, state?.org])
   const [isLoading, error, orgs, setOrgs, org, setOrg] = useOrgApi(token)
   useEffect(() => {
@@ -23,11 +25,11 @@ function OrgForm({handleOnChange}) {
     <SettingsForm
       isLoading={isLoading}
       error={error}
-      label="Select an organization"
-      errorMessage="Could not find the user organizations. Contact your organization admin."
+      label={t("Select an organization")}
+      errorMessage={t("Could not find the user organizations. Contact your organization admin.")}
     >
       <FormControl fullWidth>
-        <InputLabel id="select-org-label">Organization</InputLabel>
+        <InputLabel id="select-org-label">{t("Organization")}</InputLabel>
         <Select
           labelId="select-org-label"
           id="demo-simple-select"
@@ -49,12 +51,12 @@ function OrgForm({handleOnChange}) {
               />
             )
           }}
-          label="Organization"
+          label={t("Organization")}
           onChange={handleChange}
           sx={{ textOverflow: 'ellipsis' }}
         >
           <MenuItem disabled value="">
-            <em>Organizations</em>
+            <em>{t("Organizations")}</em>
           </MenuItem>
           {(orgs.length > 0)
             ? orgs.map((org) => (

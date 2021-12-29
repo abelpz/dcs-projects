@@ -170,7 +170,7 @@ export default function SettingsStepper() {
                     onClick={handleBack}
                     sx={{ mr: 1, backgroundColor: 'rgba(0, 0, 0, 0.17)' }}
                   >
-                    <ArrowBackIcon fontSize="small" />{' Back'}
+                    <ArrowBackIcon fontSize="small" />{t(' Back')}
                   </Button>
                 </Grid>        
                 <Grid
@@ -186,7 +186,7 @@ export default function SettingsStepper() {
                       onClick={handleSkip}
                       sx={{ mr: 1, backgroundColor: 'rgba(0, 0, 0, 0.17)' }}
                     >
-                      Skip
+                      {t('Skip')}
                     </Button>
                   )}
                   <Button
@@ -194,7 +194,7 @@ export default function SettingsStepper() {
                     disabled={!steps[activeStep]?.completed}
                     sx={{ mr: 1, backgroundColor: 'rgba(0, 0, 0, 0.17)' }}
                   >
-                   {activeStep === steps.length - 1 ? 'Finish' : <>{'Next '}<ArrowForwardIcon fontSize="small" /></>}
+                   {activeStep === steps.length - 1 ? t('Finish') : <>{t('Next ')}<ArrowForwardIcon fontSize="small" /></>}
                   </Button>
                 </Grid>
               </Grid>

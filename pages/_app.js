@@ -10,13 +10,14 @@ import theme from '@styles/theme'
 import { CacheProvider } from '@emotion/react'
 import { TOKEN_ID } from '@common/constants'
 import { useRouter } from 'next/router';
-import i18n from '@locale/i18n'
+import i18n from '@locales/i18n'
 
 const clientSideEmotionCache = createEmotionCache();
 
 function MyApp(props) {
   const {locale} = useRouter()
-  i18n.changeLanguage(locale).then(() => {console.log('locale changed')})
+  i18n.changeLanguage(locale).then(() => { console.log('locale changed') })
+  console.log(i18n)
   store.subscribe(
     // we use debounce to save the state once each 800ms
     // for better performances in case multiple changes occur in a short time

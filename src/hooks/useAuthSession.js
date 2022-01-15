@@ -1,9 +1,9 @@
 import Router from "next/router";
-import { useEffect } from "react"
-import { useSelector } from "react-redux"
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 export function useAuthSession() {
-  const {user} = useSelector(state => state.auth)
+  const { user } = useSelector(({settings}) => settings);
   useEffect(() => {
     if (!user) Router.push("/login");
   }, [user]);

@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 const usePrint = () => {
-  const [print, setPrint] = useState(false) 
+  const [print, setPrint] = useState(false);
   useEffect(() => {
-    setPrint(true)
-  }, [])
-  return print
-}
+    setPrint(true);
+  }, []);
+  return print;
+};
 
-export default usePrint
+export default usePrint;

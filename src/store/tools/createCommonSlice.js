@@ -1,13 +1,12 @@
-const { createSlice } = require("@reduxjs/toolkit")
+const { createSlice } = require("@reduxjs/toolkit");
 
 export const createCommonSlice = (options, actions) => {
-
   const newOptions = {
     reducers: {
       ...options.reducers,
-      ...actions
+      ...actions,
     },
-    ...options
-  }
-  return createSlice(newOptions)
-}
+    ...options,
+  };
+  return createSlice(newOptions);
+};
